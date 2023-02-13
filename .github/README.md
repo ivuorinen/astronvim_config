@@ -8,8 +8,8 @@
 
 ## 🌟 Preview
 
-![Preview1](https://github.com/ivuorinen/astronvim_config/blob/master/.github/assets/overview.png)
-![Preview2](https://github.com/ivuorinen/astronvim_config/blob/master/.github/assets/vertsplit.png)
+![Preview1](https://github.com/ivuorinen/astronvim_config/blob/main/.github/assets/overview.png)
+![Preview2](https://github.com/ivuorinen/astronvim_config/blob/main/.github/assets/vertsplit.png)
 
 ## 🛠 Installation
 
