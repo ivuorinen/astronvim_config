@@ -1,7 +1,7 @@
 return {
   -- You can disable default plugins as follows:
-  ["goolord/alpha-nvim"] = { disable = true },
-  ["max397574/better-escape.nvim"] = { disable = true },
+  ["goolord/alpha-nvim"] = { disable = false },
+  ["max397574/better-escape.nvim"] = { disable = false },
   -- You can also add new plugins here as well:
   ["wakatime/vim-wakatime"] = {
     opt = true,
