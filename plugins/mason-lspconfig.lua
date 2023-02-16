@@ -21,11 +21,9 @@ return {
     "phpactor",
     "psalm",
     "pyright",
-    "spectral",
     "stylelint_lsp",
     "sqls",
     "tailwindcss",
-    "terraformls",
     "tsserver",
     "vuels",
     "yamlls"

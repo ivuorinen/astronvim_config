@@ -2,9 +2,34 @@ return {
   -- Automatically install missing parsers when entering buffer
   auto_install = true,
   ensure_installed = {
-    "c", "help", "bash", "comment", "diff", "dockerfile", "html", "json",
-    "json5", "javascript", "latex", "markdown", "php", "phpdoc", "python",
-    "scss", "terraform", "todotxt", "toml", "typescript", "vim", "vue",
-    "yaml"
+    "help",
+
+    "bash",
+    "c",
+    "cmake",
+    "comment",
+    "diff",
+    "dockerfile",
+    "gitignore",
+    "graphql",
+    "html",
+    "javascript",
+    "json",
+    "json5",
+    "latex",
+    "lua",
+    "markdown",
+    "php",
+    "phpdoc",
+    "python",
+    "scss",
+    "sql",
+    "terraform",
+    "todotxt",
+    "toml",
+    "typescript",
+    "vim",
+    "vue",
+    "yaml",
   }
 }
