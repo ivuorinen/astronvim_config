@@ -65,7 +65,6 @@ local config = {
   --
   --   return local_vim
   -- end,
-
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
@@ -406,6 +405,7 @@ local config = {
       -- overrides `require("mason-null-ls").setup(...)`
       opts = {
         automatic_setup = true,
+        automatic_installation = true,
         -- ensure_installed = { "prettier", "stylua" },
       },
     },
