@@ -417,7 +417,9 @@ local config = {
       },
     },
     {
-      "wakatime/vim-wakatime"
+      "wakatime/vim-wakatime",
+      lazy = false,
+      enabled = true
     },
   },
   -- Customize Heirline options
