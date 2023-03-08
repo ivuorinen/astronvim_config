@@ -1,7 +1,8 @@
 --              AstroNvim Configuration Table
 -- All configuration changes should go inside of the table below
 --
--- A split up user configuration example can be found at: https://github.com/AstroNvim/split_user_example
+-- A split up user configuration example can be found at:
+-- https://github.com/AstroNvim/split_user_example
 --
 -- You can think of a Lua "table" as a dictionary like data structure the
 -- normal format is "key = value". These also handle array like data structures
@@ -9,15 +10,15 @@
 local config = {
   -- Configure AstroNvim updates
   updater = {
-    remote = "origin", -- remote to use
-    channel = "nightly", -- "stable" or "nightly"
-    version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
-    branch = "v3", -- branch name (NIGHTLY ONLY)
-    commit = nil, -- commit hash (NIGHTLY ONLY)
-    pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
-    skip_prompts = false, -- skip prompts about breaking changes
+    remote = "origin",     -- remote to use
+    channel = "nightly",   -- "stable" or "nightly"
+    version = "latest",    -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
+    branch = "nightly",    -- branch name (NIGHTLY ONLY)
+    commit = nil,          -- commit hash (NIGHTLY ONLY)
+    pin_plugins = nil,     -- nil, true, false (nil will pin plugins on stable only)
+    skip_prompts = false,  -- skip prompts about breaking changes
     show_changelog = true, -- show the changelog after performing an update
-    auto_quit = true, -- automatically quit the current session after a successful update
+    auto_quit = true,      -- automatically quit the current session after a successful update
     -- remotes = { -- easily add new remotes to track
     --   ["remote_name"] = "https://remote_url.come/repo.git", -- full remote url
     --   ["remote2"] = "github_user/repo", -- GitHub user/repo shortcut,
@@ -40,20 +41,28 @@ local config = {
     opt = {
       -- set to true or false etc.
       relativenumber = true, -- sets vim.opt.relativenumber
-      number = true, -- sets vim.opt.number
-      spell = false, -- sets vim.opt.spell
-      signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-      wrap = true, -- sets vim.opt.wrap
+      number = true,         -- sets vim.opt.number
+      spell = false,         -- sets vim.opt.spell
+      signcolumn = "auto",   -- sets vim.opt.signcolumn to auto
+      wrap = true,           -- sets vim.opt.wrap
     },
     g = {
-      mapleader = " ", -- sets vim.g.mapleader
-      autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
-      cmp_enabled = true, -- enable completion at start
-      autopairs_enabled = true, -- enable autopairs at start
-      diagnostics_enabled = true, -- enable diagnostics at start
-      status_diagnostics_enabled = true, -- enable diagnostics in statusline
-      icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
-      ui_notifications_enabled = true, -- disable notifications when toggling UI elements
+      --- sets vim.g.mapleader
+      mapleader = " ",
+      --- toggle auto formatting at start (lsp.formatting.format_on_save must be enabled)
+      autoformat_enabled = true,
+      --- enable completion at start
+      cmp_enabled = true,
+      --- enable autopairs at start
+      autopairs_enabled = true,
+      --- enable diagnostics at start
+      diagnostics_enabled = true,
+      --- enable diagnostics in statusline
+      status_diagnostics_enabled = true,
+      -- disable icons in the UI (disable if no nerd font available, requires :PackerSync after)
+      icons_enabled = true,
+      -- disable notifications when toggling UI elements
+      ui_notifications_enabled = true,
     },
   },
   -- If you need more control, you can use the function()...end notation
@@ -67,7 +76,7 @@ local config = {
   -- end,
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
-    virtual_text = true,
+    virtual_text = false,
     underline = true,
   },
   -- Extend LSP configuration
@@ -119,16 +128,17 @@ local config = {
     -- Add overrides for LSP server settings, the keys are the name of the server
     config = {
       -- example for addings schemas to yamlls
-      yamlls = { -- override table for require("lspconfig").yamlls.setup({...})
-        settings = {
-          yaml = {
-            schemas = {
-              ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
-              ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-              ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
-            },
-          },
-        },
+      yamlls = {
+        -- override table for require("lspconfig").yamlls.setup({...})
+        -- settings = {
+        -- yaml = {
+        -- schemas = {
+        -- ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
+        -- ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+        -- ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
+        -- },
+        -- },
+        -- },
       },
     },
   },
@@ -142,13 +152,13 @@ local config = {
     n = {
       -- second key is the lefthand side of the map
       -- mappings seen under group name "Buffer"
-      ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
-      ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
-      ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
-      ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+          ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+          ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
+          ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
+          ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
       -- tables with the `name` key will be registered with which-key if it's installed
       -- this is useful for naming menus
-      ["<leader>b"] = { name = "Buffers" },
+          ["<leader>b"] = { name = "Buffers" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     },
@@ -169,6 +179,7 @@ local config = {
   },
   -- Configure plugins
   plugins = {
+    "AstroNvim/astrocommunity",
     -- You can disable default plugins as follows:
     -- { "max397574/better-escape.nvim", enabled = false },
     --
@@ -176,7 +187,7 @@ local config = {
     -- {
     --   "L3MON4D3/LuaSnip",
     --   config = function(plugin, opts)
-    --     require "plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+    --     require "plugins.configs.luasnip"(plugin, opts) -- inc. default astronvim config that calls the setup call
     --     -- add more custom luasnip configuration such as filetype extend or custom snippets
     --     local luasnip = require "luasnip"
     --     luasnip.filetype_extend("javascript", { "javascriptreact" })
@@ -185,7 +196,7 @@ local config = {
     -- {
     --   "windwp/nvim-autopairs",
     --   config = function(plugin, opts)
-    --     require "plugins.configs.nvim-autopairs"(plugin, opts) -- include the default astronvim config that calls the setup call
+    --     require "plugins.configs.nvim-autopairs"(plugin, opts) -- inc. default astronvim config
     --     -- add more custom autopairs configuration such as custom rules
     --     local npairs = require "nvim-autopairs"
     --     local Rule = require "nvim-autopairs.rule"
@@ -227,14 +238,13 @@ local config = {
     -- You can also add new plugins here as well:
     -- Add plugins, the lazy syntax
     "andweeb/presence.nvim",
-    -- {
-    --   "ray-x/lsp_signature.nvim",
-    --   event = "BufRead",
-    --   config = function()
-    --     require("lsp_signature").setup()
-    --   end,
-    -- },
-
+    {
+      "ray-x/lsp_signature.nvim",
+      event = "BufRead",
+      config = function()
+        require("lsp_signature").setup()
+      end,
+    },
     -- Plugin entries can also be used to override the default options for plugins as well
     {
       "goolord/alpha-nvim",
@@ -413,9 +423,29 @@ local config = {
       "jay-babu/mason-nvim-dap.nvim",
       -- overrides `require("mason-nvim-dap").setup(...)`
       opts = {
-        -- ensure_installed = { "python" },
+        automatic_installation = true,
+        automatic_setup = true,
+        ensure_installed = { "python", "php", "js", "bash" },
       },
     },
+    { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
+    {
+      "m4xshen/smartcolumn.nvim",
+      opts = {
+        colorcolumn = { "80", "100", "120" },
+        disabled_filetypes = { "help", "text", "markdown" },
+      },
+    },
+    { import = "astrocommunity.code-runner.overseer-nvim" },
+    { import = "astrocommunity.diagnostics.lsp_lines-nvim" },
+    { import = "astrocommunity.diagnostics.trouble-nvim" },
+    { import = "astrocommunity.editing-support.refactoring-nvim" },
+    { import = "astrocommunity.editing-support.neogen" },
+    { import = "astrocommunity.markdown-and-latex.glow-nvim" },
+    { import = "astrocommunity.pack.typescript" },
+    { import = "astrocommunity.project.neoconf-nvim" },
+    { import = "astrocommunity.test.neotest" },
+    { import = "astrocommunity.utility.neodim" },
     {
       "wakatime/vim-wakatime",
       lazy = false,
