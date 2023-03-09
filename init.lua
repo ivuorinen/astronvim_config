@@ -88,7 +88,7 @@ local config = {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = true,     -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -184,15 +184,15 @@ local config = {
     -- { "max397574/better-escape.nvim", enabled = false },
     --
     -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
-    -- {
-    --   "L3MON4D3/LuaSnip",
-    --   config = function(plugin, opts)
-    --     require "plugins.configs.luasnip"(plugin, opts) -- inc. default astronvim config that calls the setup call
-    --     -- add more custom luasnip configuration such as filetype extend or custom snippets
-    --     local luasnip = require "luasnip"
-    --     luasnip.filetype_extend("javascript", { "javascriptreact" })
-    --   end,
-    -- },
+    {
+      "L3MON4D3/LuaSnip",
+      config = function(plugin, opts)
+        require "plugins.configs.luasnip" (plugin, opts) -- inc. default astronvim config that calls the setup call
+        -- add more custom luasnip configuration such as filetype extend or custom snippets
+        local luasnip = require "luasnip"
+        luasnip.filetype_extend("javascript", { "javascriptreact" })
+      end,
+    },
     -- {
     --   "windwp/nvim-autopairs",
     --   config = function(plugin, opts)
@@ -441,8 +441,8 @@ local config = {
     { import = "astrocommunity.diagnostics.trouble-nvim" },
     { import = "astrocommunity.editing-support.refactoring-nvim" },
     { import = "astrocommunity.editing-support.neogen" },
+    { import = "astrocommunity.indent.mini-indentscope" },
     { import = "astrocommunity.markdown-and-latex.glow-nvim" },
-    { import = "astrocommunity.pack.typescript" },
     { import = "astrocommunity.project.neoconf-nvim" },
     { import = "astrocommunity.test.neotest" },
     { import = "astrocommunity.utility.neodim" },
