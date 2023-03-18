@@ -16,6 +16,8 @@ return { -- Add the community repository of plugin specifications
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.neogen" },
+  { import = "astrocommunity.editing-support.nvim-regexplainer" },
+  { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.indent.mini-indentscope" },
   { import = "astrocommunity.markdown-and-latex.glow-nvim" },
   { import = "astrocommunity.project.neoconf-nvim" },
