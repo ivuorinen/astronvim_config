@@ -19,11 +19,8 @@ return { -- use mason-lspconfig to configure LSP installations
         "html",
         "intelephense",
         "jsonls",
-        -- "lua_ls",
         "marksman",
-        "phpactor",
         "psalm",
-        -- "pyright",
         "stylelint_lsp",
         "sqlls",
         "tailwindcss",
@@ -39,7 +36,6 @@ return { -- use mason-lspconfig to configure LSP installations
     opts = {
       automatic_setup = true,
       automatic_installation = true,
-      -- ensure_installed = { "prettier", "stylua" },
     },
   },
   {

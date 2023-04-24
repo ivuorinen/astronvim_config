@@ -22,7 +22,6 @@ return {
       "phpdoc",
       "python",
       "scss",
-      "sql",
       "terraform",
       "todotxt",
       "toml",
